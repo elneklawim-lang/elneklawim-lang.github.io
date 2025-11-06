@@ -9,6 +9,5 @@
         <p>This is my first website hosted on GitHub Pages!</p>
         <button onclick="showMessage()">Click Me!</button>
     </div>
-    <script src="script.js"></script>
 </body>
 </html>
