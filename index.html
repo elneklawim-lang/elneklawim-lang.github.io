@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tools Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 AI Tools Hub</h1>
+            <p>Your all-in-one AI playground</p>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-button active" onclick="openTab('chatbot')">🤖 AI Chatbot</button>
+            <button class="tab-button" onclick="openTab('image')">🎨 Image Generator</button>
+            <button class="tab-button" onclick="openTab('video')">🎬 Video Generator</button>
+            <button class="tab-button" onclick="openTab('code')">💻 Code Helper</button>
+        </div>
+
+        <!-- AI Chatbot Tab -->
+        <div id="chatbot" class="tab-content active">
+            <h2>AI Chat Assistant</h2>
+            <div class="chat-container">
+                <div id="chat-messages" class="chat-messages">
+                    <div class="message bot-message">
+                        Hello! I'm your AI assistant. How can I help you today?
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="user-input" placeholder="Type your message...">
+                    <button onclick="sendMessage()">Send</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Image Generator Tab -->
+        <div id="image" class="tab-content">
+            <h2>AI Image Generator</h2>
+            <div class="image-generator">
+                <input type="text" id="image-prompt" placeholder="Describe the image you want to generate...">
+                <button onclick="generateImage()">Generate Image</button>
+                <div class="image-result">
+                    <img id="generated-image" src="" alt="Generated image will appear here">
+                </div>
+                <div class="image-gallery">
+                    <h3>Quick Templates:</h3>
+                    <button class="template-btn" onclick="useTemplate('a cute cartoon whale in the ocean')">🐋 Whale</button>
+                    <button class="template-btn" onclick="useTemplate('futuristic city with flying cars')">🏙️ Future City</button>
+                    <button class="template-btn" onclick="useTemplate('magical forest with glowing mushrooms')">🌲 Magic Forest</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Video Generator Tab -->
+        <div id="video" class="tab-content">
+            <h2>Video Generator</h2>
+            <div class="video-generator">
+                <input type="text" id="video-prompt" placeholder="Describe the video you want to create...">
+                <select id="video-style">
+                    <option value="cartoon">Cartoon</option>
+                    <option value="realistic">Realistic</option>
+                    <option value="anime">Anime</option>
+                    <option value="cyberpunk">Cyberpunk</option>
+                </select>
+                <button onclick="generateVideo()">Generate Video</button>
+                <div class="video-result">
+                    <video id="generated-video" controls style="display:none;">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p id="video-status">No video generated yet</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Code Helper Tab -->
+        <div id="code" class="tab-content">
+            <h2>Code Helper</h2>
+            <div class="code-helper">
+                <textarea id="code-input" placeholder="Describe what code you want to generate..."></textarea>
+                <select id="code-language">
+                    <option value="html">HTML</option>
+                    <option value="css">CSS</option>
+                    <option value="javascript">JavaScript</option>
+                    <option value="python">Python</option>
+                </select>
+                <button onclick="generateCode()">Generate Code</button>
+                <div class="code-result">
+                    <pre><code id="generated-code"></code></pre>
+                    <button onclick="copyCode()">Copy Code</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
